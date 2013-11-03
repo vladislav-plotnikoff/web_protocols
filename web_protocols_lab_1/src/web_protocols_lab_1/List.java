@@ -31,12 +31,12 @@ public class List {
 
 	public  String delNode (int num) {
 		if ((num <= 0) | (num > length)) {
-			return "Наибольший элемент списка:" + length;
+			return "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ:" + length;
 		}
 		Current = retelem(num - 1);
 		Current.next = Current.next.next;
 		length--;
-		return "Удаление произведено!";
+		return "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!";
 	}
 
 	public String[] getelem () {
@@ -54,12 +54,13 @@ public class List {
 		BList.length = length;
 		BList.First.next = First.next;
 		String max;
-		while (length > 1) {
+		while (length >= 1) {
 			int imax = 1;
 			Current = First.next;
 			max = Current.setelem();
 			for (int j = 1; j < length; j++) {
 				if (max.compareTo(Current.next.setelem()) < 0 ) {
+					max = Current.next.setelem();
 					imax = j+1;
 					if (BList.length == length) {
 						BList.First.next = Current.next;
